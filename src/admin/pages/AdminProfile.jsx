@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import AdminSideBar from "../components/AdminSidebar";
+import AdminSidebar from "../components/AdminSidebar";
 import { FaPhone, FaUser, FaLock } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -100,7 +100,7 @@ export default function AdminProfile() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <div className="md:flex">
-        <AdminSideBar/>
+        <AdminSidebar/>
 
         <main className="flex-1 p-6 md:pt-10">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
