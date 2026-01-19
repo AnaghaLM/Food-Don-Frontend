@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import AdminSidebar from "../components/AdminSidebar";
+import AdminSidebar from "../../components/AdminSidebar";
 import { FaPhone, FaUser, FaLock } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
