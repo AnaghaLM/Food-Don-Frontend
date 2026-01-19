@@ -11,8 +11,9 @@ import { toast } from "react-toastify";
 export default function ManageDonations() {
   const [donations, setDonations] = useState([]);
   const [dropOffInputs, setDropOffInputs] = useState({});
+  console.log(donations)
 
-  /* ================= FETCH DONATIONS ================= */
+ 
   useEffect(() => {
     fetchDonations();
   }, []);
@@ -31,7 +32,7 @@ export default function ManageDonations() {
     }
   };
 
-  /* ================= SAVE DROP-OFF ================= */
+
   const handleSaveDropOff = async (id, status) => {
     if (status !== "Available") return;
 
@@ -62,7 +63,7 @@ export default function ManageDonations() {
     }
   };
 
-  /* ================= STATUS COLOR ================= */
+  
   const getStatusBadge = (status) => {
     switch (status) {
       case "Available":
@@ -87,7 +88,7 @@ export default function ManageDonations() {
           Manage Donations
         </h1>
 
-        {/* ================= MOBILE VIEW ================= */}
+       
         <div className="md:hidden space-y-4">
           {donations.map((d) => {
             const isAvailable = d.status === "Available";
@@ -101,7 +102,9 @@ export default function ManageDonations() {
                   <div>
                     <h3 className="font-semibold">{d.title}</h3>
                     <p className="text-sm text-gray-500">
-                      {d.donor?.username || "—"}
+                      {d.userMail
+ || "—"}
+
                     </p>
                   </div>
 
@@ -168,7 +171,7 @@ export default function ManageDonations() {
           })}
         </div>
 
-        {/* ================= DESKTOP TABLE ================= */}
+     
         <div className="hidden md:block overflow-x-auto">
           <table className="min-w-[900px] w-full bg-white rounded-xl shadow">
             <thead className="bg-[#1a1a1a] text-white">
@@ -192,9 +195,9 @@ export default function ManageDonations() {
                     className="border-b hover:bg-orange-50 align-top"
                   >
                     <td className="p-3">{d.title}</td>
-                    <td className="p-3">
-                      {d.donor?.username || "—"}
-                    </td>
+                  <td className="p-3">
+  {d.userMail || "—"}
+</td>
                     <td className="p-3">{d.quantity}</td>
 
                     <td className="p-3">

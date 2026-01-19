@@ -194,18 +194,26 @@ function CreateDonation() {
             className="mb-4 w-full"
           />
 {preview && (
-  <div className="mb-4 w-full h-56 border rounded-lg overflow-hidden bg-gray-100">
+  <div className="flex justify-center">
     <img
       src={preview}
       alt="preview"
-      className="w-full h-full object-cover"
+       className="
+          max-w-[540px]
+          max-h-[500px]
+          w-auto
+          h-auto
+          rounded-xl
+          object-contain
+          shadow-sm
+        "
     />
   </div>
 )}
 
           <button
             onClick={handleAddDonation}
-            className="bg-orange-600 text-white p-3 rounded w-full font-semibold"
+            className=" mt-2 bg-orange-600 text-white p-3 rounded w-full font-semibold"
           >
             Submit Donation
           </button>

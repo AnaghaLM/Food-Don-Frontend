@@ -221,47 +221,58 @@ function DonationDetails() {
             </div>
 
             {/* IMAGE */}
-            <div className="p-6 border-t">
-              <h3 className="font-bold mb-3">Donation Image</h3>
+<div className="p-6 border-t">
+  <h3 className="font-bold mb-3">Donation Image</h3>
 
-              <div className="h-72 md:h-96 bg-[#f5f3f0] rounded-xl overflow-hidden">
+  <div className="flex justify-center">
+    {donation.image ? (
+      
+      <img
+        src={`http://localhost:3000/uploads/${donation.image}`}
+        alt="donation"
+        className="
+          max-w-[540px]
+          max-h-[500px]
+          w-auto
+          h-auto
+          rounded-xl
+          object-contain
+          shadow-sm
+        "
+      />
+    ) : (
+      <div className="w-72 h-72 bg-[#f5f3f0] rounded-xl flex items-center justify-center">
+        <ImageIcon className="w-12 h-12 text-gray-400" />
+      </div>
+    )}
+  </div>
+</div>
 
-                {donation.image ? (
-                  <img
-                    src={`http://localhost:3000/uploads/${donation.image}`}
-                    alt="donation"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="h-full flex items-center justify-center">
-                    <ImageIcon className="w-12 h-12 text-gray-400" />
-                  </div>
-                )}
-              </div>
-            </div>
 
-            {/* MAP */}
-           <div className="rounded-xl overflow-hidden h-72 md:h-[28rem]">
 
-              <h3 className="text-lg font-bold mb-4">Pickup Location</h3>
 
-              <div className="rounded-xl overflow-hidden border h-64">
-                <iframe
-                  title="Pickup Location"
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  className="border-0"
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(
-                    donation.location
-                  )}&output=embed`}
-                />
-              </div>
 
-              <p className="text-sm text-[#6b6b6b] mt-2">
-                {donation.location}
-              </p>
-            </div>
+        {/* MAP */}
+<div className="p-6 border-t">
+  <h3 className="text-lg font-bold mb-4">Pickup Location</h3>
+
+  <div className="max-w-3xl mx-auto aspect-[16/9] rounded-xl overflow-hidden border">
+    <iframe
+      title="Pickup Location"
+      loading="lazy"
+      className="w-full h-full border-0"
+      src={`https://www.google.com/maps?q=${encodeURIComponent(
+        donation.location
+      )}&output=embed`}
+    />
+  </div>
+
+  <p className="text-sm text-[#6b6b6b] mt-2 text-center">
+    {donation.location}
+  </p>
+</div>
+
+
           </div>
         </div>
       </div>
