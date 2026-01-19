@@ -80,7 +80,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen flex bg-[#f5f3f0]">
-      <AdminSidebar />
+      <AdminSidebar/>
 
       <main className="flex-1 p-6 md:p-8">
       
