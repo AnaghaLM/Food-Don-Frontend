@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo */}
+       
           <Link to="/" className="flex items-center gap-2">
             <Heart className="h-8 w-8 text-[#f97316] fill-[#f97316]" />
             <span className="font-['Playfair_Display',Georgia,serif] text-xl font-bold text-[#1a1a1a]">
@@ -18,7 +18,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          
           <div className="hidden md:flex items-center gap-8">
             <Link
               to="/"
@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop CTA */}
+          
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/login"
@@ -70,75 +70,57 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-[#FDFCFA] border-b border-[#e5e0d8]">
-          <div className="px-4 py-4 space-y-3">
+{isMenuOpen && (
+  <div className="md:hidden bg-[#FDFCFA] border-b border-[#e5e0d8]">
+    <div className="px-4 py-4 space-y-3">
 
-            <Link
-              to="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
-            >
-              Home
-            </Link>
+      <Link
+        to="/"
+        onClick={() => setIsMenuOpen(false)}
+        className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
+      >
+        Home
+      </Link>
 
-            <Link
-              to="/about"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
-            >
-              About Us
-            </Link>
+      <Link
+        to="/about"
+        onClick={() => setIsMenuOpen(false)}
+        className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
+      >
+        About Us
+      </Link>
 
-            <Link
-              to="/donor/register"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
-            >
-              Become a Donor
-            </Link>
+      <Link
+        to="/contact"
+        onClick={() => setIsMenuOpen(false)}
+        className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
+      >
+        Contact
+      </Link>
 
-            <Link
-              to="/volunteer/register"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
-            >
-              Volunteer
-            </Link>
+      <div className="pt-4 flex flex-col gap-2">
 
-            <Link
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-2 text-[#6b6b6b] hover:text-[#f97316]"
-            >
-              Contact
-            </Link>
+        <Link
+          to="/register"
+          className="w-full py-2.5 text-center bg-[#f97316] text-white rounded-lg hover:bg-[#ea580c]"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Register
+        </Link>
 
-            <div className="pt-4 flex flex-col gap-2">
+        <Link
+          to="/login"
+          className="w-full py-2.5 text-center border border-[#e5e0d8] rounded-lg text-[#1a1a1a] hover:bg-[#f5f3f0]"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Sign In
+        </Link>
 
+      </div>
+    </div>
+  </div>
+)}
 
-               <Link
-                to="/donate"
-                className="w-full py-2.5 text-center bg-[#f97316] text-white rounded-lg hover:bg-[#ea580c]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Donate Now
-              </Link>
-
-              
-              <Link
-                to="/login"
-                className="w-full py-2.5 text-center border border-[#e5e0d8] rounded-lg text-[#1a1a1a] hover:bg-[#f5f3f0]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign In
-              </Link>
-
-             
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
